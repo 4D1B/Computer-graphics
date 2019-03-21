@@ -1,0 +1,147 @@
+
+#define GLUT_DISABLE_ATEXIT_HACK
+#include <cstdio>
+#include<GL/gl.h>
+#include <GL/glut.h>
+
+void myDisplay(void)
+{
+glClear (GL_COLOR_BUFFER_BIT);
+glColor3ub (128, 128, 1);
+glPointSize(5.0);
+glBegin(GL_LINES);
+glVertex2i(50,200);
+glVertex2i(50,50);
+
+glEnd();
+
+
+glBegin(GL_LINES);
+glVertex2i(100,50);
+glVertex2i(100,200);
+
+glEnd();
+
+
+glBegin(GL_LINES);
+glVertex2i(50,150);
+glVertex2i(100,180);
+
+glEnd();
+
+glBegin(GL_LINES);
+glVertex2i(100,130);
+glVertex2i(50,100);
+
+glEnd();
+
+
+
+glBegin(GL_LINES);
+glVertex2i(200,500);
+glVertex2i(200,0);
+
+glEnd();
+
+
+
+glBegin(GL_LINES);
+glVertex2i(0,250);
+glVertex2i(400,250);
+
+glEnd();
+
+glColor3ub (128, 128, 160);
+
+glBegin(GL_QUADS);
+glVertex2i(350,200);
+glVertex2i(250,200);
+glVertex2i(250,100);
+glVertex2i(350,100);
+
+
+glEnd();
+
+glColor3ub (128, 128, 131);
+
+glBegin(GL_QUADS);
+glVertex2i(400,150);
+glVertex2i(300,150);
+glVertex2i(300,50);
+glVertex2i(400,50);
+
+
+glEnd();
+
+
+
+
+
+glColor3ub (128, 198, 131);
+
+glBegin(GL_TRIANGLES);
+glVertex2i(50,450);
+glVertex2i(150,450);
+glVertex2i(100,370);
+glEnd();
+
+
+glBegin(GL_TRIANGLES);
+glVertex2i(100,370);
+glVertex2i(50,300);
+glVertex2i(150,300);
+glEnd();
+
+
+
+glBegin(GL_TRIANGLES);
+glVertex2i(300,450);
+glVertex2i(250,375);
+glVertex2i(350,375);
+glEnd();
+
+glColor3ub (128, 1, 211);
+
+glBegin(GL_TRIANGLES);
+glVertex2i(300,300);
+glVertex2i(250,375);
+glVertex2i(350,375);
+glEnd();
+
+
+
+
+
+
+
+
+
+
+glFlush ();
+}
+
+void myInit (void)
+{
+glClearColor(0.0, 0.0, 0.0, 0.0);
+glPointSize(4.0);
+glMatrixMode(GL_PROJECTION);
+glLoadIdentity();
+gluOrtho2D(0.0, 400.0, 0.0, 500.0);
+}
+
+
+
+
+
+int main(int argc, char** argv)
+{
+glutInit(&argc, argv);
+glutInitDisplayMode (GLUT_SINGLE | GLUT_RGB);
+glutInitWindowSize (400, 500);
+glutInitWindowPosition (100, 150);
+glutCreateWindow ("");
+glutDisplayFunc(myDisplay);
+myInit ();
+glutMainLoop();
+}
+
