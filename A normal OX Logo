@@ -1,0 +1,121 @@
+#define GLUT_DISABLE_ATEXIT_HACK
+#include <cstdio>
+#include<GL/gl.h>
+#include <GL/glut.h>
+#include <stdio.h>
+#include <iostream>
+#include <math.h>
+#include <stdlib.h>
+
+using namespace std;
+void circle(int x,int y)
+{
+//    int arr[][];
+    int m;
+    m=1-y;
+    int ox,oy;
+    int x1=x,y1=y;
+            cout <<x1<< " "<< m << " east "  << y1<< "\n";
+            glBegin(GL_POINTS);
+            glVertex2i(x1*10,y1*10);
+            glVertex2i(-x1*10,y1*10);
+            glVertex2i(x1*10,-y1*10);
+            glVertex2i(-x1*10,-y1*10);
+
+            glEnd();
+   for(int i=0;i<60 ;i++)
+    {
+
+        if(m<0)
+
+        {
+            ox=x1;
+            x1= x1+1;
+            x++;
+            y1=y1;
+            glBegin(GL_POINTS);
+            glVertex2i(x1*10,y1*10);
+            glVertex2i(-x1*10,y1*10);
+            glVertex2i(x1*10,-y1*10);
+            glVertex2i(-x1*10,-y1*10);
+            glVertex2i(y1*10,x1*10);
+            glVertex2i(-y1*10,x1*10);
+            glVertex2i(y1*10,-x1*10);
+            glVertex2i(-y1*10,-x1*10);
+           glEnd();
+            cout <<x1<< " "<< m << " east "  << y1<< "\n";
+            m= m+ 2*(ox+1) +1;
+
+        }
+        else
+        {
+             ox=x1;
+             oy=y1;
+             x1= x1+1;
+             y1=y1-1;
+
+        cout <<x1<< " "<< m<< " SE" << y1<<"\n";
+        glBegin(GL_POINTS);
+        glVertex2i(x1,y1);
+            glVertex2i(x1*10,y1*10);
+            glVertex2i(-x1*10,y1*10);
+            glVertex2i(x1*10,-y1*10);
+            glVertex2i(-x1*10,-y1*10);
+            glVertex2i(y1*10,x1*10);
+            glVertex2i(-y1*10,x1*10);
+            glVertex2i(y1*10,-x1*10);
+            glVertex2i(-y1*10,-x1*10);
+        glEnd();
+        m= m+ 2*(ox+1) + (pow(y1,2)-pow(oy,2)) - (y1-oy) +1;
+
+        }
+
+
+    }
+
+    glFlush ();
+}
+
+
+
+void myDisplay(void)
+{
+
+
+glPointSize(7.0);
+
+
+
+glClear (GL_COLOR_BUFFER_BIT);
+glColor3ub (255,255,255);
+
+circle(0,8);
+
+
+
+}
+
+void myInit (void)
+{
+glClearColor(0.0, 0.0, 0.0, 0.0);
+glPointSize(40.0);
+glMatrixMode(GL_PROJECTION);
+glLoadIdentity();
+gluOrtho2D(-500, 500, -400,400);
+}
+
+
+
+
+
+int main(int argc, char** argv)
+{
+glutInit(&argc, argv);
+glutInitDisplayMode (GLUT_SINGLE | GLUT_RGB);
+glutInitWindowSize (1000,800);
+glutInitWindowPosition (100, 150);
+glutCreateWindow ("");
+glutDisplayFunc(myDisplay);
+myInit ();
+glutMainLoop();
+}
