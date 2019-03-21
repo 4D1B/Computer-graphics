@@ -1,0 +1,180 @@
+
+#define GLUT_DISABLE_ATEXIT_HACK
+#include <cstdio>
+#include<GL/gl.h>
+#include <GL/glut.h>
+#include <stdio.h>
+#include <iostream>
+using namespace std;
+
+void funct(int x,int y,int z,int k)
+{
+
+//    int x=100,y=200,z=300,k=400;
+
+
+    double m;
+
+   // m=(k-y)/(z-x);
+
+    int i,j,pk;
+
+    i=2*(k-y);
+    j=(z-x);
+    pk=i-j;
+
+    do{
+
+
+        if(pk>=0){
+        if(x==z){
+            x=x;
+            cout << "";
+
+        }
+        else if(x>z)
+        {
+            x--;
+            cout << "";
+        }
+        else if(x<z){
+            x++;
+            cout << "";
+        }
+
+
+        if(y==k){
+            y=y;
+
+        }
+        else if(y>k)
+        {
+            y--;
+        }
+        else{
+            y++;
+        }
+      //  glBegin(GL_POINTS);
+
+        glVertex2i(x,y);
+       //   glEnd();
+
+        pk=pk+i-2*j;
+    }
+    else
+    {
+        {
+
+        if(x==z){
+            x=x;
+
+        }
+        else if(x>z)
+        {
+            x--;
+        }
+        else{
+            x++;
+
+        }
+
+
+        if(y==k){
+
+
+        }
+        else if(y>k)
+        {
+            y--;
+        }
+        else{
+            y++;
+
+        }
+
+
+
+        glVertex2i(x,y);
+
+
+
+         pk=pk+i;
+
+    }
+    }cout << "w";
+    }while((x!=z)||(y!=k));
+
+
+
+
+}
+
+
+void myDisplay(void)
+{
+glClear (GL_COLOR_BUFFER_BIT);
+glColor3ub (128, 188, 251);
+glPointSize(5.0);
+
+glBegin(GL_POINTS);
+
+   int x=100,y=200,z=300,k=400;
+
+
+funct(x,y,z,k);
+
+glColor3ub (123, 208, 43);
+
+  x=100,y=400,z=300,k=200;
+
+funct(x,y,z,k);
+
+
+ x=100,y=200,z=300,k=200;
+
+funct(x,y,z,k);
+
+
+
+ x=100,y=400,z=100,k=200;
+
+funct(x,y,z,k);
+
+
+
+
+  glEnd();
+
+
+
+
+
+
+
+glFlush ();
+}
+
+void myInit (void)
+{
+glClearColor(0.0, 0.0, 0.0, 0.0);
+glPointSize(4.0);
+glMatrixMode(GL_PROJECTION);
+glLoadIdentity();
+gluOrtho2D(0.0, 400.0, 0.0, 500.0);
+}
+
+
+
+
+
+int main(int argc, char** argv)
+{
+glutInit(&argc, argv);
+glutInitDisplayMode (GLUT_SINGLE | GLUT_RGB);
+glutInitWindowSize (400, 500);
+glutInitWindowPosition (100, 150);
+glutCreateWindow ("");
+glutDisplayFunc(myDisplay);
+myInit ();
+glutMainLoop();
+}
