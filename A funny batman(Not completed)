@@ -1,0 +1,236 @@
+#include <cstdio>
+#include<GL/gl.h>
+#include <GL/glut.h>
+
+
+void myDisplay(void)
+{
+glClear (GL_COLOR_BUFFER_BIT);
+glColor3f (0.0, 0.0, 0.0);
+glPointSize(4.0);
+glBegin(GL_LINES);
+glVertex2i(10,130);
+glVertex2i(20,130);
+
+glVertex2i(10,130);
+glVertex2i(10,120);
+
+
+glVertex2i(30,75);
+glVertex2i(60,75);
+
+
+glVertex2i(40,50);
+glVertex2i(40,25);
+
+
+glVertex2i(40,50);
+glVertex2i(50,50);
+
+
+glVertex2i(50,50);
+glVertex2i(50,10);
+
+
+glVertex2i(50,10);
+glVertex2i(60,10);
+
+
+
+glVertex2i(30,100);
+glVertex2i(70,100);
+
+glColor3f (255.0, 0.0, 0.0);
+glVertex2i(20,110);
+glVertex2i(70,110);
+
+glVertex2i(80,130);
+glVertex2i(80,120);
+
+glVertex2i(20,140);
+glVertex2i(70,140);
+
+glVertex2i(70,130);
+glVertex2i(70,140);
+
+glVertex2i(80,130);
+glVertex2i(70,130);
+
+glVertex2i(80,130);
+glVertex2i(80,120);
+
+glVertex2i(20,140);
+glVertex2i(20,130);
+
+glVertex2i(50,200);
+glVertex2i(60,200);
+
+
+glVertex2i(50,200);
+glVertex2i(50,180);
+
+glVertex2i(60,200);
+glVertex2i(60,150);
+
+glVertex2i(40,180);
+glVertex2i(50,180);
+
+
+
+glEnd();
+
+glColor3f(0.0, 0.0, 0.0); // sets color to black.
+       glBegin(GL_QUADS);
+               glVertex2f(20,100); // vertex 1
+               glVertex2f(10,100); // vertex 2
+               glVertex2f(10,50); // vertex 3
+               glVertex2f(20,50); // vertex 4
+       glEnd();
+
+
+glColor3f(128.0, 0.0, 0.0); // sets color to black.
+       glBegin(GL_QUADS);
+               glVertex2f(20,110); // vertex 1
+               glVertex2f(10,110); // vertex 2
+               glVertex2f(10,100); // vertex 3
+               glVertex2f(20,100); // vertex 4
+       glEnd();
+
+
+glColor3f(128.0, 0.0, 0.0); // sets color to black.
+       glBegin(GL_QUADS);
+               glVertex2f(20,120); // vertex 1
+               glVertex2f(10,120); // vertex 2
+               glVertex2f(10,110); // vertex 3
+               glVertex2f(20,110); // vertex 4
+       glEnd();
+
+
+glColor3f(128.0, 0.0, 0.0); // sets color to black.
+       glBegin(GL_QUADS);
+               glVertex2f(40,25); // vertex 1
+               glVertex2f(20,25); // vertex 2
+               glVertex2f(20,10); // vertex 3
+               glVertex2f(40,10); // vertex 4
+       glEnd();
+glColor3f(0.1, 0.1, 0.1); // sets color to black.
+       glBegin(GL_QUADS);
+               glVertex2f(30,80); // vertex 1
+               glVertex2f(20,80); // vertex 2
+               glVertex2f(20,10); // vertex 3
+               glVertex2f(30,10); // vertex 4
+       glEnd();
+glColor3f(0.0, 0.0, 0.0); // sets color to black.
+       glBegin(GL_QUADS);
+               glVertex2f(30,100); // vertex 1
+               glVertex2f(20,100); // vertex 2
+               glVertex2f(20,80); // vertex 3
+               glVertex2f(30,80); // vertex 4
+       glEnd();
+
+
+glColor3f(0.1, 0.1, 0.1); // sets color to black.
+       glBegin(GL_QUADS);
+               glVertex2f(70,80); // vertex 1
+               glVertex2f(60,80); // vertex 2
+               glVertex2f(60,10); // vertex 3
+               glVertex2f(70,10); // vertex 4
+       glEnd();
+
+glColor3f(128.0, 0.0, 0.0); // sets color to black.
+       glBegin(GL_QUADS);
+               glVertex2f(80,100); // vertex 1
+               glVertex2f(70,100); // vertex 2
+               glVertex2f(70,50); // vertex 3
+               glVertex2f(80,50); // vertex 4
+       glEnd();
+
+glColor3f(128.0, 0.0, 0.0); // sets color to black.
+       glBegin(GL_QUADS);
+               glVertex2f(70,80); // vertex 1
+               glVertex2f(60,80); // vertex 2
+               glVertex2f(60,10); // vertex 3
+               glVertex2f(70,10); // vertex 4
+       glEnd();
+
+glColor3f(128.0, 0.0, 0.0); // sets color to black.
+       glBegin(GL_QUADS);
+               glVertex2f(80,110); // vertex 1
+               glVertex2f(70,110); // vertex 2
+               glVertex2f(70,100); // vertex 3
+               glVertex2f(80,100); // vertex 4
+       glEnd();
+glColor3f(128.0, 0.0, 0.0); // sets color to black.
+       glBegin(GL_QUADS);
+               glVertex2f(80,120); // vertex 1
+               glVertex2f(70,120); // vertex 2
+               glVertex2f(70,110); // vertex 3
+               glVertex2f(80,100); // vertex 4
+       glEnd();
+
+glColor3f(1.0, 1.0, 0.0); // sets color to black.
+       glBegin(GL_QUADS);
+               glVertex2f(60,130); // vertex 1
+               glVertex2f(30,130); // vertex 2
+               glVertex2f(30,120); // vertex 3
+               glVertex2f(60,120); // vertex 4
+       glEnd();
+
+glColor3f(128.0, 0.0, 0.0); // sets color to black.
+       glBegin(GL_QUADS);
+               glVertex2f(80,120); // vertex 1
+               glVertex2f(70,120); // vertex 2
+               glVertex2f(70,110); // vertex 3
+               glVertex2f(80,100); // vertex 4
+       glEnd();
+
+glColor3f(128.0, 0.0, 0.0); // sets color to black.
+       glBegin(GL_QUADS);
+               glVertex2f(40,150); // vertex 1
+               glVertex2f(30,150); // vertex 2
+               glVertex2f(30,140); // vertex 3
+               glVertex2f(40,140); // vertex 4
+       glEnd();
+glColor3f(128.0, 0.0, 0.0); // sets color to black.
+       glBegin(GL_QUADS);
+               glVertex2f(60,150); // vertex 1
+               glVertex2f(40,150); // vertex 2
+               glVertex2f(40,140); // vertex 3
+               glVertex2f(60,140); // vertex 4
+       glEnd();
+glColor3f(128.0, 0.0, 0.0); // sets color to black.
+       glBegin(GL_QUADS);
+               glVertex2f(40,200); // vertex 1
+               glVertex2f(30,200); // vertex 2
+               glVertex2f(30,140); // vertex 3
+               glVertex2f(40,140); // vertex 4
+       glEnd();
+
+
+glFlush ();
+
+
+
+
+}
+void myInit (void)
+{
+glClearColor(1.0, 1.0, 1.0, 0.0);
+glColor3f(0.0f, 0.0f, 0.0f);
+glPointSize(14.0);
+glMatrixMode(GL_PROJECTION);
+glLoadIdentity();
+gluOrtho2D(0.0, 640.0, 0.0, 480.0);
+}
+int main(int argc, char** argv)
+{
+glutInit(&argc, argv);
+glutInitDisplayMode (GLUT_SINGLE | GLUT_RGB);
+glutInitWindowSize (640, 480);
+glutInitWindowPosition (100, 150);
+glutCreateWindow ("my first attempt");
+glutDisplayFunc(myDisplay);
+myInit ();
+glutMainLoop();
+}
+
